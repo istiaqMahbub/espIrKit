@@ -1,0 +1,24 @@
+
+curl -X GET http://192.168.11.169/config?command=mesh
+
+curl -X POST -H "Content-Type:application/json" -d '{  "MeshConfig": {    "MeshId": "18:fe:34:00:00:80",    "MeshSSID": "test123",    "MeshPasswd": "janina123",    "isMeshEnable": "false"  },  "MeshserverIP": {    "server_host": "192.169.244.37",    "server_port": "1883"  }}' http://192.168.11.183/config?command=mesh
+
+curl -X POST -H "Content-Type:application/json" -d '{"Request":{"Station":{"Connect_Station":{"ssid":"kanokshome","password":"amijanina",}}}}' http://192.168.0.104/config?command=wifi
+
+
+curl -X POST -H "Content-Type:application/json" -d '{ "cmd_id" : "1"   }' http://192.168.11.183/config?command=irkit
+
+
+curl -X POST -H "Content-Type:application/json" -d '{ "cmd" : "learn", "name_cmd" : "test" }' http://192.168.11.183/config?command=irkitCmd
+
+curl -X POST -H "Content-Type:application/json" -d '{ "host_mqtt":"192.169.244.37","port_mqtt":"1883","user_mqtt":"kanok","pass_mqtt":"kanok","ssl_mqtt":"0"}' http://192.168.11.166/config?command=mqtt
+
+
+
+
+curl -X GET http://192.168.11.169/config?command=device_cfg
+curl -X POST -H "Content-Type:application/json" -d '{ "shMac":"00:0c:43:00:50:0d","type_device":"SMWFLT-02","name_device":"APL WiFi generic Controller" }' http://192.168.11.168/config?command=device_cfg
+
+
+
+mosquitto_pub -h m10.cloudmqtt.com -p 14081 -u qdqowxwy -P ZEp3mmEAYur- -t 'home/02:30:12:25:AA:B6/wifi/000684CE/cmd' -m  '{ "sender_ip":"192.169.244.37","cmd":"3","cmd_id":"56","token":"200","len_data":"16","data":"MTIzNDU2Nzg5MA=="}'
