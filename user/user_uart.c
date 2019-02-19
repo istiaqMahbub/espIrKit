@@ -2,7 +2,7 @@
  * user_uart.c
  *
  *  Created on: Aug 7, 2017
- *      Author: kanok
+ *      Author: Md. Istiaq Mahbub
  */
 #include "ets_sys.h"
 #include "os_type.h"
